@@ -1,33 +1,35 @@
-<div class="border font-bold  border-r border-solid border-black pr-2 w-[20vw] min-h-[100vh] p-8 fixed">
+
+  <div class="border font-bold  border-r border-solid border-black pr-2 w-[20vw] min-h-[100vh] p-8 fixed">
   <h1 class="text-4xl font-bold" style="font-family: italianno">talky</h1>
   <nav class="flex flex-col justify-between">
    <div>
-     <ul>
+     <ul class="cursor-pointer">
       <li>
-        <a><span class="material-symbols-outlined"> home </span> home</a>
+        <a routerLink="/home"><span class="material-symbols-outlined" routerLinkActive="active"> home </span> <span class="hidden sm:inline">home</span></a>
       </li>
       <li>
-        <a><span class="material-symbols-outlined"> search </span>search</a>
+        <a routerLink="/search"><span class="material-symbols-outlined"> search </span><span class="hidden sm:inline">search</span></a>
       </li>
 
       <li>
-        <a><span class="material-symbols-outlined"> forum </span> messages</a>
+        <a routerLink="/messages"><span class="material-symbols-outlined"> forum </span> <span class="hidden sm:inline">messages</span></a>
       </li>
       <li>
-        <a><span class="material-symbols-outlined"> favorite </span>notifications</a>
+        <a><span class="material-symbols-outlined"> favorite </span><span class="hidden sm:inline">notifications</span></a>
       </li>
       <li>
-        <a><span class="material-symbols-outlined"> library_add </span>create</a>
+        <a routerLink="/post"><span class="material-symbols-outlined"> library_add </span><span class="hidden sm:inline">create</span></a>
       </li>
     </ul>
    </div>
    <div class="fixed bottom-0">
-    <div class="w-[6vw] flex"><img src="https://st2.depositphotos.com/2559749/11304/v/450/depositphotos_113040644-stock-illustration-flat-icon-isolate-on-white.jpg" alt="" class="rounded-full border border-solid border-black" >
-        <p class="mt-4">profile</p>
+    <a routerLink="/profile">
+        <div class="w-[4vw] flex"><img src="https://st2.depositphotos.com/2559749/11304/v/450/depositphotos_113040644-stock-illustration-flat-icon-isolate-on-white.jpg" alt="" class="rounded-full border border-solid border-black" >
+        <p class="mt-4"><span class="hidden sm:inline">profile</span></p>
     </div>
-    <a><span class="material-symbols-outlined">
-menu
-</span></a>
+    </a>
+
+    <a routerLink="/"><i class="fa-solid fa-right-from-bracket text-4xl mt-4"></i></a>
    </div>
   </nav>
 </div>

@@ -1,0 +1,12 @@
+@media screen and (max-width: 600px) {
+    .posts {
+        width: 100%;
+
+    }
+    .general{
+        width: 100%;
+    }
+    .users{
+        display: none;
+    }
+}

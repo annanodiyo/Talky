@@ -1,0 +1,11 @@
+@media (max-width: 640px) {
+    .sm\:border-invisible {
+        border-color: transparent !important;
+    }
+    input{
+        width: 88vw;
+    }
+    .acc{
+        margin-top: 0;
+    }
+}

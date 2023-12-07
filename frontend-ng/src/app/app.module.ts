@@ -10,6 +10,8 @@ import { AsideComponent } from './aside/aside.component';
 import { HomeComponent } from './home/home.component';
 import { CreatepostComponent } from './createpost/createpost.component';
 import { EditprofileComponent } from './editprofile/editprofile.component';
+import { MessagesComponent } from './messages/messages.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { EditprofileComponent } from './editprofile/editprofile.component';
     AsideComponent,
     HomeComponent,
     CreatepostComponent,
-    EditprofileComponent
+    EditprofileComponent,
+    MessagesComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
