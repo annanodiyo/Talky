@@ -7,6 +7,7 @@ import { MessagesComponent } from './messages/messages.component';
 import { EditprofileComponent } from './editprofile/editprofile.component';
 import { CreatepostComponent } from './createpost/createpost.component';
 import { SearchComponent } from './search/search.component';
+import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'messages', component: MessagesComponent },
   { path: 'profile', component: EditprofileComponent },
   { path: 'post', component: CreatepostComponent },
-  { path: 'search', component: SearchComponent },
+  { path: 'reset', component: ResetpasswordComponent },
+  { path: 'myProfile', component: SearchComponent },
 ];
 
 @NgModule({

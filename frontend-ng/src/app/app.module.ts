@@ -12,6 +12,8 @@ import { CreatepostComponent } from './createpost/createpost.component';
 import { EditprofileComponent } from './editprofile/editprofile.component';
 import { MessagesComponent } from './messages/messages.component';
 import { SearchComponent } from './search/search.component';
+import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { SearchComponent } from './search/search.component';
     CreatepostComponent,
     EditprofileComponent,
     MessagesComponent,
-    SearchComponent
+    SearchComponent,
+    ResetpasswordComponent,
+   
   ],
   imports: [
     BrowserModule,

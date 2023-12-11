@@ -3,17 +3,102 @@
     <app-aside></app-aside>
   </div>
   <div class="w-[78vw]">
-   <div class="border-b-2 py-4 px-2 border-gray-200 rounded-2xl">
-        <input
-          type="text"
-          placeholder="search here . . ."
-          class="py-2 px-2   w-2/3 italic"
+    <div class="flex gap-4 mb-6 justify-center mt-6">
+      <div class="prof">
+        <img
+          src="https://png.pngtree.com/png-vector/20191101/ourmid/pngtree-cartoon-color-simple-male-avatar-png-image_1934459.jpg"
+          alt=""
+          width="80px"
         />
-        <button><span class="material-symbols-outlined"> search </span></button>
       </div>
-    <div class="posts grid grid-cols-6 sm:grid-cols-2 md:grid-cols-3">
+      <div class="flex flex-col">
+        <p class="font-bold text-xl">@opere_</p>
+        <p class="mt-2 w-[40vw] text-justify">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit culpa id
+          deserunt laudantium, facere ducimus mollitia? Exercitationem, nostrum
+          ut, odit nulla expedita aut inventore omnis dolorem facere provident
+          fuga accusamus?
+        </p>
+      </div>
+    </div>
+    <div class="mb-5 flex justify-center">
+      <button (click)="viewFollowers()">
+        <img
+          src="https://cdn1.iconfinder.com/data/icons/ios-11-glyphs/30/people-512.png"
+          alt=""
+          width="40px"
+        />
+      </button>
+      <button (click)="showPost()" >
+        <img
+          src="https://static.thenounproject.com/png/3541222-200.png"
+          alt=""
+          width="40px"
+          class="ml-20"
+        />
+      </button>
+      <button class="ml-20"><a routerLink="/profile">Edit profile</a></button>
+    </div>
+    <div>
+      <table class="min-w-full divide-y divide-gray-200" *ngIf="showFollowers">
+        <thead>
+          <tr>
+            <th
+              class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+            >
+              People
+            </th>
+            <th class="px-6 py-3 bg-gray-50"></th>
+            <th class="px-6 py-3 bg-gray-50"></th>
+          </tr>
+        </thead>
+        <tbody class="bg-white divide-y divide-gray-200">
+          <tr>
+            <td class="px-6 py-4 whitespace-nowrap">Alfreds Futterkiste</td>
+            <td class="px-6 py-4">
+              <button
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              >
+                Following
+              </button>
+            </td>
+            <td class="px-6 py-4">
+              <button
+                class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+              >
+                Remove
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td class="px-6 py-4 whitespace-nowrap">
+              Centro comercial Moctezuma
+            </td>
+            <td class="px-6 py-4">
+              <button
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              >
+                Following
+              </button>
+            </td>
+            <td class="px-6 py-4">
+              <button
+                class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+              >
+                Remove
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="posts grid grid-cols-6 sm:grid-cols-2 md:grid-cols-3" *ngIf="showPosts">
       <div>
-        <img src="https://cdn.pixabay.com/photo/2012/03/01/00/55/flowers-19830_1280.jpg" alt="" />
+        <img
+          src="https://cdn.pixabay.com/photo/2012/03/01/00/55/flowers-19830_1280.jpg"
+          alt=""
+        />
       </div>
     </div>
   </div>

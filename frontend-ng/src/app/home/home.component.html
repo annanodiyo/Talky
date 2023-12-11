@@ -1,6 +1,6 @@
-<div class="flex justify-between">
+<div class="content flex justify-between">
   <div><app-aside></app-aside></div>
-  <div class="p-10 w-[80vw]">
+  <div class="p-10 w-[80vw] content">
     <div class="flex mb-6" id="profiles">
       <div>
         <img
@@ -13,9 +13,8 @@
       </div>
     </div>
     <div class="posts flex justify-between">
-      <div class="general w-[70%] flex flex-col sm:w-[100vw]">
+      <div class="general w-[65%] flex flex-col sm:w-[100vw]">
         <div class="postscrol">
-          <div class="scroll"></div>
           <div class="body flex text-xs font-bold">
             <img
               src="https://st2.depositphotos.com/2559749/11304/v/450/depositphotos_113040644-stock-illustration-flat-icon-isolate-on-white.jpg"
@@ -25,28 +24,89 @@
             />
             <p class="mt-4 ml-2">tumisan_</p>
           </div>
-          <div class="p-4 pl-8">
+          <div class="p-4 pl-8 " *ngIf = "picture">
             <img
               src="https://media.istockphoto.com/id/1089853236/photo/couple-hugging.jpg?s=612x612&w=is&k=20&c=p4QCLB00TjPZscMCdvNViYrVUH0139t1Cjb5W84Qga4="
               alt=""
             />
           </div>
           <div class="flex gap-5">
-            <button><i class="fa-regular fa-heart fa-lg"></i></button>
-            <button><i class="fa-regular fa-comment fa-lg"></i></button>
+            <button (click)="toggleHeart()">
+              <i
+                [ngClass]="
+                  isLiked
+                    ? 'fa-solid fa-heart fa-lg red'
+                    : 'fa-regular fa-heart fa-lg'
+                "
+              ></i>
+            </button>
+
+            <button (click)="showComments()"><i class="fa-regular fa-comment fa-lg"></i></button>
             <button><i class="fa-regular fa-paper-plane fa-lg"></i></button>
           </div>
-          <div class="caption">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic id mollitia doloribus molestiae ipsam ratione vero odio incidunt veniam repellat unde omnis debitis reiciendis commodi blanditiis, ipsa nobis molestias sunt.
+          <div class="caption w-[48vw] text-justify">
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic id
+              mollitia doloribus molestiae ipsam ratione vero odio incidunt
+              veniam repellat unde omnis debitis reiciendis commodi blanditiis,
+              ipsa nobis molestias sunt.
+            </p>
           </div>
-          <div class="border-b border-black-300 w-[80%] mt-4 ml-7">
-            <textarea name="" id="" cols="35" placeholder="add your comment " style="outline: none;" class="resize-none h-auto"></textarea>
-        </div>
 
+          <div class="postcomments   p-2 w-2/3 ml-[40px]" *ngIf="comments">
+            <div class="py-2">
+              <p class="font-bold">username</p>
+              <p>
+                🌿 Mindful Movement, Mind-Blowing Results: Say goodbye to
+                monotony! With yoga, every movement is a dance, every breath is
+                a melody. Feel the burn while embracing the serenity. 🕊️
+              </p>
+              <!--REPLY CONTAINER-->
+              <button
+                (click)="toggleReply()"
+                class="text-[#6B7280] text-[13px] text-right"
+              >
+                Reply
+              </button>
+              <button class="text-[#6B7280] text-[13px] mx-8">Edit</button>
+              <button class="text-[#6B7280] text-[13px]">Delete</button>
+
+              <div
+                *ngIf="showReply"
+                class="reply-container flex justify-between items-center py-2"
+              >
+                <input
+                  type="text"
+                  placeholder="Type your reply"
+                  class="py-1.0"
+                />
+
+                <button type="submit" class="comment outline-none">
+                  <i class="fa-solid fa-paper-plane"></i>
+                </button>
+              </div>
+              <!-- Dropdown for edit and delete -->
+              <!-- <div class="dropdown mt-2 bg-red-500">
+                            <button class=""><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                            <div class="dropdown-content bg-white border rounded-md hidden">
+                                <button class="block w-full text-left py-2 px-4 hover:bg-gray-200">Edit</button>
+                                <button class="block w-full text-left py-2 px-4 hover:bg-gray-200">Delete</button>
+                            </div>
+                        </div> -->
+            </div>
+            <div class="py-2">
+              <p class="font-bold">username</p>
+              <p>
+                🌸 Floral Symphony: In every petal and bloom, there's a story
+                waiting to be told. The floral tapestry of nature is a symphony
+                of colors, fragrances, and the delicate whispers of life. 🌺🌼
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="users w-[28%] hidden sm:block">
+      <div class="users w-[34%] hidden sm:block">
         <p class="font-bold italic mb-3">suggestions for you . . .</p>
         <div class="flex">
           <img

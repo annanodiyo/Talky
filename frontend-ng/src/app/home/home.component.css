@@ -1,12 +1,59 @@
-@media screen and (max-width: 600px) {
-    .posts {
-        width: 100%;
+.postcomments {
+    overflow-y: scroll;
+    height: 40rem;
+}
 
+.postcomments::-webkit-scrollbar {
+    width: 5px;
+    /* width of the entire scrollbar */
+}
+
+.postcomments::-webkit-scrollbar-track {
+    background-color: transparent;
+    /* color of the scroll track */
+}
+
+.postcomments::-webkit-scrollbar-thumb {
+    background-color: var(--grey);
+    /* color of the scroll thumb */
+    border-radius: 10px;
+    /* roundness of the scroll thumb */
+}
+.red {
+    color: red;
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width: 600px) {
+    .home{
+        display: flex;
+        flex-direction: column;
+    }
+    .content{
+        width: 100vw;
+        margin-top: 50px;
+    }
+    .posts {
+        width: 100vw;
     }
     .general{
-        width: 100%;
+        width: 100vw;
     }
     .users{
         display: none;
     }
+    .caption{
+        width:80vw;
+    }
+        .postcomments {
+            overflow-y: scroll;
+            height: 10rem;
+            width: 60vw;
+        }
 }

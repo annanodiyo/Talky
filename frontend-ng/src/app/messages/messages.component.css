@@ -1,0 +1,35 @@
+@media screen and (max-width: 600px) {
+    .maincont{
+        gap: 0;
+    }
+    .container {
+        width: 100%;
+        margin-top: 60px;
+        margin-left: 10px;
+        margin-right: 10px;
+        border: none;
+        border-style: none;
+    }
+
+    .chatlist {
+        display: none;
+        min-width: 100% !important;
+        /* Adjust the width for smaller screens */
+        border: none;
+        /* Remove border for better mobile view */
+    }
+
+    .chatlist>div {
+        width: 100%;
+        /* Adjust the width for smaller screens */
+    }
+
+    .container>div {
+        padding: 10px;
+        /* Add padding for better spacing */
+    }
+
+.chats{
+    height: 100vh;
+}
+}

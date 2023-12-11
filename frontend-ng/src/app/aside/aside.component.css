@@ -1,5 +1,52 @@
-@media screen and (max-width: 600px){
-    .border{
+.active {
+    color: black;
+}
+@media screen and (max-width: 600px) {
+    .navbar {
         border: none;
+        display: flex;
+        flex-direction: row;
+        width: 100vw;
+        height: 10vh;
+        position: fixed;
+        background-color: white;
+
+    }
+
+    .navigation ul {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        margin-left: 10px;
+    }
+
+    .navigation ul li {
+        margin-left: 10px;
+        font-size: larger;
+    }
+
+    .navigation {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .navigation div {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .profile {
+        display: none;
+        /* flex-direction: row;
+        align-items: flex-start; */
+        margin-top: 10px;
+        /* Add margin to separate from the navigation */
+    }
+
+
+    .profie>a>div>img {
+        width: 34px;
     }
 }

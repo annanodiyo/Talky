@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent {
+  showFollowers = false
+  showPosts = true
+
+  viewFollowers(){
+    this.showFollowers = true
+    this.showPosts = false
+  }
+  showPost(){
+    this.showPosts  = true
+    this.showFollowers = false
+  }
 
 }
