@@ -1,0 +1,49 @@
+### user registration
+POST http://localhost:3800/user/register
+Content-Type: application/json
+
+{
+    "full_name": "annan perez",
+    "email": "mercy125@gmail.com",
+    "username": "@annan_",
+    "password": "qwerty123"
+}
+
+### login user
+POST http://localhost:3800/user/login
+Content-Type: application/json
+
+{
+     "username": "@annan_",
+    "password": "qwerty123"
+}
+### get All users
+GET http://localhost:3800/user/allUsers
+Content-Type: application/json
+
+{}
+
+### user by username or email
+GET http://localhost:3800/user/username
+Content-Type: application/json
+
+{
+    "username":"@annan14_"
+}
+
+###deactivate account
+delete http://localhost:3800/user/delete/@annan14_
+
+### create post
+POST http://localhost:3800/post/create
+Content-Type: application/json
+
+{
+    "post_text": "annan perez",
+    "image_url": "mjkojon",
+    "user_id": "ee72d0a3-47cb-471a-b26b-c59d934486ca"
+}
+
+### like post
+
+
