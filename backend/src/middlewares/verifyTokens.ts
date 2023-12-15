@@ -19,7 +19,7 @@ export const verifyToken = (
 
     if (!token) {
       return res.status(404).json({
-        message: "You do not have access",
+        message: "You need to Login to proceed",
       });
     }
 

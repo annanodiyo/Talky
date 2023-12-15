@@ -7,7 +7,7 @@ import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 import { User } from "../interfaces/userInterface";
 import Connection from "../dbhelpers/dbhelpers";
-import { registerUserSchema } from "../validators/validators";
+import { UsersSchema, registerUserSchema } from "../validators/validators";
 import { isEmpty } from "lodash";
 import { ExtendedUser } from "../middlewares/verifyTokens";
 
@@ -132,27 +132,60 @@ export const getUser = async (req: ExtendedUser, res: Response) => {
 };
 
 //deactivate account
-export const deactivate = async (req: Request, res: Response) => {
+// export const deactivate = async (req: Request, res: Response) => {
+//   try {
+//     let { username} = req.params;
+//     // console.log(req);
+
+//     const pool = await mssql.connect(sqlConfig);
+//     const user = await pool
+//       .request()
+//       .input("username", username)
+//       .execute("deactivateAccount");
+
+//     const rowsAffected = user.rowsAffected[0];
+//     if (rowsAffected > 0) {
+//       return res
+//         .status(200)
+//         .json({ message: "Account deactivated successfully", rowsAffected });
+//     } else {
+//       return res.status(404).json({ error: "No user found to delete" });
+//     }
+//   } catch (error) {
+//     console.error(error);
+//     return res.status(202).json({ error: "request failed" });
+//   }
+// };
+
+export const toggleAccoountStatus = async (req:Request, res:Response)=>{
   try {
-    let { username} = req.params;
-    // console.log(req);
+    let { username } = req.params;
+    let { error } = UsersSchema.validate(req.params);
+    let result = await dbhelper.execute("toggleAccountStatus", { username });
+    const rowsAffected = result.rowsAffected[0];
+        if (rowsAffected > 0) {
+          const current_user = (await dbhelper.query(`SELECT * FROM users WHERE username = '${username}'`)).recordset;
+          console.log(current_user);
+          if(current_user[0].is_Deleted == true){
+  return res
+    .status(200)
+    .json({ message: "Account deactivated successfully", rowsAffected });
+          }
 
-    const pool = await mssql.connect(sqlConfig);
-    const user = await pool
-      .request()
-      .input("username", username)
-      .execute("deactivateAccount");
 
-    const rowsAffected = user.rowsAffected[0];
-    if (rowsAffected > 0) {
-      return res
-        .status(200)
-        .json({ message: "Account deactivated successfully", rowsAffected });
-    } else {
-      return res.status(404).json({ error: "No user found to delete" });
+            return res
+              .status(200)
+              .json({
+                message: "Account activated successfully",
+                rowsAffected,
+              });
+
+
+        } else {
+          return res.status(404).json({ error: "No user found to delete" });
+        }
+      } catch (error) {
+        console.error(error);
+        return res.status(202).json({ error: "request failed" });
+      }
     }
-  } catch (error) {
-    console.error(error);
-    return res.status(202).json({ error: "request failed" });
-  }
-};

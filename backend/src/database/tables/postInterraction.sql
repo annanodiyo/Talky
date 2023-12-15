@@ -31,9 +31,12 @@ CREATE TABLE post_comments (
     user_id VARCHAR(500) NOT NULL,
     post_id VARCHAR(500),
     comment_text TEXT,
+    is_Deleted BIT DEFAULT 0,
     created_at DATETIME DEFAULT GETDATE(),
     FOREIGN KEY (user_id) REFERENCES users(user_id) ,
     FOREIGN KEY (post_id) REFERENCES post(post_id)
 );
 
 select * from post_comments
+select * from users
+drop table post_comments

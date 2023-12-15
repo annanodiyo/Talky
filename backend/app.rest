@@ -4,8 +4,8 @@ Content-Type: application/json
 
 {
     "full_name": "annan perez",
-    "email": "mercy125@gmail.com",
-    "username": "@annan_",
+    "email": "opere12@gmail.com",
+    "username": "@annan14_",
     "password": "qwerty123"
 }
 
@@ -17,35 +17,41 @@ Content-Type: application/json
      "username": "@annan_",
     "password": "qwerty123"
 }
+
+###deactivate account
+delete http://localhost:3800/user/account/@annan_
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZWU3MmQwYTMtNDdjYi00NzFhLWIyNmItYzU5ZDkzNDQ4NmNhIiwiZnVsbF9uYW1lIjoiYW5uYW4gcGVyZXoiLCJlbWFpbCI6Im1lcmN5MTI1QGdtYWlsLmNvbSIsInVzZXJuYW1lIjoiQGFubmFuXyIsImlzX0RlbGV0ZWQiOmZhbHNlLCJpYXQiOjE3MDI2NDg5NjksImV4cCI6MTcwMjY1MjU2OX0.ChGLGMpC_X6-vKgatLWjdOA3UB4ZneFP8v6YGZHSuDk
+
 ### get All users
 GET http://localhost:3800/user/allUsers
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYmE1NmZhZmUtMDgzYi00ZDg2LWIxMmUtZTUzZjE0OWM5NDA2IiwiZnVsbF9uYW1lIjoiYW5uYW4gcGVyZXoiLCJlbWFpbCI6Im9wZXJlQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoiQG9wZXJlXyIsImlzX0RlbGV0ZWQiOmZhbHNlLCJpYXQiOjE3MDI2MzUwNTAsImV4cCI6MTcwMjYzODY1MH0.PZs5Kh7sMRDDzA547qhCN6Tv-dFE2einRHuONDB2Qxg
 Content-Type: application/json
 
 {}
 
 ### user by username or email
 GET http://localhost:3800/user/username
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYmE1NmZhZmUtMDgzYi00ZDg2LWIxMmUtZTUzZjE0OWM5NDA2IiwiZnVsbF9uYW1lIjoiYW5uYW4gcGVyZXoiLCJlbWFpbCI6Im9wZXJlQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoiQG9wZXJlXyIsImlzX0RlbGV0ZWQiOmZhbHNlLCJpYXQiOjE3MDI2MzUwNTAsImV4cCI6MTcwMjYzODY1MH0.PZs5Kh7sMRDDzA547qhCN6Tv-dFE2einRHuONDB2Qxg
 Content-Type: application/json
 
 {
     "username":"@annan14_"
 }
 
-###deactivate account
-delete http://localhost:3800/user/delete/@annan14_
-
 ### create post
 POST http://localhost:3800/post/create
 Content-Type: application/json
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZWU3MmQwYTMtNDdjYi00NzFhLWIyNmItYzU5ZDkzNDQ4NmNhIiwiZnVsbF9uYW1lIjoiYW5uYW4gcGVyZXoiLCJlbWFpbCI6Im1lcmN5MTI1QGdtYWlsLmNvbSIsInVzZXJuYW1lIjoiQGFubmFuXyIsImlzX0RlbGV0ZWQiOmZhbHNlLCJpYXQiOjE3MDI2NDg5NjksImV4cCI6MTcwMjY1MjU2OX0.ChGLGMpC_X6-vKgatLWjdOA3UB4ZneFP8v6YGZHSuDk
 
 {
-    "post_text": "annan perez",
+    "post_text": "annan perez RRRRRR",
     "image_url": "mjkojon",
-    "user_id": "ee72d0a3-47cb-471a-b26b-c59d934486ca"
+    "user_id": "eba56fafe-083b-4d86-b12e-e53f149c9406"
 }
 
 ### like post
 POST http://localhost:3800/post/like
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYmE1NmZhZmUtMDgzYi00ZDg2LWIxMmUtZTUzZjE0OWM5NDA2IiwiZnVsbF9uYW1lIjoiYW5uYW4gcGVyZXoiLCJlbWFpbCI6Im9wZXJlQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoiQG9wZXJlXyIsImlzX0RlbGV0ZWQiOmZhbHNlLCJpYXQiOjE3MDI2MzUwNTAsImV4cCI6MTcwMjYzODY1MH0.PZs5Kh7sMRDDzA547qhCN6Tv-dFE2einRHuONDB2Qxg
 Content-Type: application/json
 
 {
@@ -55,10 +61,32 @@ Content-Type: application/json
 
 ### creating a comment
 POST http://localhost:3800/post/comment
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYmE1NmZhZmUtMDgzYi00ZDg2LWIxMmUtZTUzZjE0OWM5NDA2IiwiZnVsbF9uYW1lIjoiYW5uYW4gcGVyZXoiLCJlbWFpbCI6Im9wZXJlQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoiQG9wZXJlXyIsImlzX0RlbGV0ZWQiOmZhbHNlLCJpYXQiOjE3MDI2MzUwNTAsImV4cCI6MTcwMjYzODY1MH0.PZs5Kh7sMRDDzA547qhCN6Tv-dFE2einRHuONDB2Qxg
 Content-Type: application/json
 
 {
     "post_id": "464dcc4a-a258-4b72-b0fa-fa35ba4f48d0",
     "user_id": "ee72d0a3-47cb-471a-b26b-c59d934486ca",
     "comment_text":"This adjusted stored procedure is designed to handle comments. It checks if a comment with the provided comment_id exists in the Comments table. If it exists, it updates the comment_text. If it doesn't exist, it inserts a new comment with the given details into the Comments table. Adjust the logic further if there are addition"
+}
+### edit comment
+POST http://localhost:3800/post/comment/editComment
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYmE1NmZhZmUtMDgzYi00ZDg2LWIxMmUtZTUzZjE0OWM5NDA2IiwiZnVsbF9uYW1lIjoiYW5uYW4gcGVyZXoiLCJlbWFpbCI6Im9wZXJlQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoiQG9wZXJlXyIsImlzX0RlbGV0ZWQiOmZhbHNlLCJpYXQiOjE3MDI2MzUwNTAsImV4cCI6MTcwMjYzODY1MH0.PZs5Kh7sMRDDzA547qhCN6Tv-dFE2einRHuONDB2Qxg
+Content-Type: application/json
+
+{
+    "post_id": "464dcc4a-a258-4b72-b0fa-fa35ba4f48d0",
+    "user_id": "ee72d0a3-47cb-471a-b26b-c59d934486ca",
+    "comment_id":"764ac4ee-3460-4e94-af80-e412ab379b97",
+    "comment_text":"perez annan "
+}
+
+### delete comment
+POST http://localhost:3800/post/comment/deleteComment
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYmE1NmZhZmUtMDgzYi00ZDg2LWIxMmUtZTUzZjE0OWM5NDA2IiwiZnVsbF9uYW1lIjoiYW5uYW4gcGVyZXoiLCJlbWFpbCI6Im9wZXJlQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoiQG9wZXJlXyIsImlzX0RlbGV0ZWQiOmZhbHNlLCJpYXQiOjE3MDI2MzUwNTAsImV4cCI6MTcwMjYzODY1MH0.PZs5Kh7sMRDDzA547qhCN6Tv-dFE2einRHuONDB2Qxg
+Content-Type: application/json
+
+{
+    "user_id": "ee72d0a3-47cb-471a-b26b-c59d934486ca",
+    "comment_id":"764ac4ee-3460-4e94-af80-e412ab379b97"
 }

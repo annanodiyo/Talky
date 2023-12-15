@@ -6,6 +6,5 @@ AS
 BEGIN
 
     SELECT * FROM users WHERE username= @username
-    
 
 END
