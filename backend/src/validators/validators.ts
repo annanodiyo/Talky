@@ -12,3 +12,9 @@ export const postSchema = Joi.object({
   image_url: Joi.string(),
   user_id:Joi.string()
 });
+
+export const commentsSchema = Joi.object({
+  comment_text: Joi.string(),
+  post_id: Joi.string(),
+  user_id: Joi.string(),
+});

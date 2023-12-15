@@ -45,5 +45,20 @@ Content-Type: application/json
 }
 
 ### like post
+POST http://localhost:3800/post/like
+Content-Type: application/json
 
+{
+    "post_id": "464dcc4a-a258-4b72-b0fa-fa35ba4f48d0",
+    "user_id": "ee72d0a3-47cb-471a-b26b-c59d934486ca"
+}
 
+### creating a comment
+POST http://localhost:3800/post/comment
+Content-Type: application/json
+
+{
+    "post_id": "464dcc4a-a258-4b72-b0fa-fa35ba4f48d0",
+    "user_id": "ee72d0a3-47cb-471a-b26b-c59d934486ca",
+    "comment_text":"This adjusted stored procedure is designed to handle comments. It checks if a comment with the provided comment_id exists in the Comments table. If it exists, it updates the comment_text. If it doesn't exist, it inserts a new comment with the given details into the Comments table. Adjust the logic further if there are addition"
+}

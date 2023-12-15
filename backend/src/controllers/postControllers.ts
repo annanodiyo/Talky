@@ -1,7 +1,7 @@
 import Connection from "../dbhelpers/dbhelpers";
 import { Request, Response } from "express";
 
-import { postSchema } from "../validators/validators";
+import { commentsSchema, postSchema } from "../validators/validators";
 import { v4 } from "uuid";
 import axios from "axios";
 
@@ -40,25 +40,51 @@ export const createPost = async (req: Request, res: Response) => {
 
 export const likePost = async (req: Request, res: Response) => {
   try {
+    let like_id = v4();
+
     const { user_id, post_id } = req.body;
 
-    // Perform any necessary validation on user_id and post_id
-
-    const result = await axios.post('post', {
+    const result = await dbhelper.execute("likePost", {
       user_id,
       post_id,
+      like_id,
     });
 
-    console.log(result.data);
+    console.log(result);
+    return res.status(200).json({ message: "Post liked successfully" });
+  } catch (error) {
+    console.error("Error liking post:", error);
+    return res.status(500).json({ message: "Internal Server Error" });
+  }
+};
 
-    if (result.data && result.data.message === 'Post liked successfully') {
-      return res.status(200).json({ message: 'Post liked successfully' });
-    } else {
-      return res.status(500).json({ message: 'Failed to like post' });
+export const createComment = async (req: Request, res:Response)=>{
+  try {
+
+    let{user_id, post_id, comment_text} = req.body
+
+    let {error} = commentsSchema.validate(req.body)
+
+    if(error){
+      return res.status(400).json({error:error.details})
+
+    }
+    const comment_id = v4()
+
+    let result = await dbhelper.execute("comments",{
+      comment_id,
+      user_id,
+      post_id,
+      comment_text
+    })
+    console.log(result)
+    if(result){
+      return res.status(200).json({message:"you added a comment"})
+    } else{
+      return res.status(500).json({message:"failed to add a comment"})
     }
   } catch (error) {
-    console.error('Error liking post:', error);
-    return res.status(500).json({ message: 'Internal Server Error' });
+    console.error("error adding a comment", error)
+    return res.status(500).json({message:"Internal Server Error"})
   }
-
 }
