@@ -8,53 +8,66 @@
       />
     </div>
 
-    <div class=" w-full md:w-[49%] h-full">
-      <div class="form border border-solid border-black p-10  sm:border-invisible">
+    <div class="w-full md:w-[49%] h-full">
+      <div
+        class="form border border-solid border-black p-10 sm:border-invisible"
+      >
         <h1
           class="text-center text-4xl font-bold"
           style="font-family: italianno"
         >
-
           talky
         </h1>
-        <form>
+        <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
           <label for="" class="font-bold"> username </label> <br />
           <input
             class="border border-solid border-black w-[40vw] h-[7vh] p-5 mb-5"
             type="text"
+        formControlName="username"
+
             placeholder="username"
-          /><br />
+          />
+           <span id="username_error" class="text-[12px] text-red-500" *ngIf="loginForm.get('username').errors?.['errorMessage'] !== null">{{ loginForm.get('username').errors?.['errorMessage'] }}</span><br />
           <label for="" class="font-bold">password</label><br />
           <input
             class="border border-solid border-black w-[40vw] h-[7vh] p-5 mb-8"
             type="text"
+        formControlName="password"
+
             placeholder="********"
           /><br />
+           <span id="password_error" class="text-[12px] text-red-500" *ngIf="loginForm.get('password').errors?.['errorMessage'] !== null">{{ loginForm.get('password').errors?.['errorMessage'] }}</span>
 
           <div class="flex justify-center">
             <input
               type="submit"
               value="Log In"
-              class="bg-[#0d99ff] text-white font-bold rounded-lg w-[30vw] h-[40px]"
+              class="bg-[#0d99ff] text-white font-bold rounded-lg w-[30vw] h-[40px] cursor-pointer hover:bg-black"
             />
+             <span id="email-error" class="text-[12px] text-red-500"></span>
           </div>
         </form>
         <div class="flex mt-10 gap-2 items-center">
-            <hr class="w-[30%] my-2 border-t-2 border-gray-400 hidden sm:block" />
-        <p class="font-bold text-xl">
-          <a  routerLink="/reset" class="hover:text-[#007bff]">forgot password?</a>
-        </p>
-        <hr class="w-[30%] my-2 border-t-2 border-gray-400 hidden sm:block" />
+          <hr class="w-[30%] my-2 border-t-2 border-gray-400 hidden sm:block" />
+          <p class="font-bold text-xl">
+            <a routerLink="/reset" class="hover:text-[#007bff]"
+              >forgot password?</a
+            >
+          </p>
+          <hr class="w-[30%] my-2 border-t-2 border-gray-400 hidden sm:block" />
         </div>
-
       </div>
-      <div class="border border-solid border-black mt-10 p-10 sm:border-invisible">
+      <div
+        class="border border-solid border-black mt-10 p-10 sm:border-invisible"
+      >
         <p class="font-bold text-center italic">
-          don't have an account? <span class="text-[#0d99ff] text-xl ml-4"><a routerLink="/register">sign up</a></span>
+          don't have an account?
+          <span class="text-[#0d99ff] text-xl ml-4"
+            ><a routerLink="/register">sign up</a></span
+          >
         </p>
       </div>
     </div>
   </div>
-<!-- <app-footer></app-footer> -->
-
+  <!-- <app-footer></app-footer> -->
 </div>

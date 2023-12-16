@@ -131,32 +131,6 @@ export const getUser = async (req: ExtendedUser, res: Response) => {
   }
 };
 
-//deactivate account
-// export const deactivate = async (req: Request, res: Response) => {
-//   try {
-//     let { username} = req.params;
-//     // console.log(req);
-
-//     const pool = await mssql.connect(sqlConfig);
-//     const user = await pool
-//       .request()
-//       .input("username", username)
-//       .execute("deactivateAccount");
-
-//     const rowsAffected = user.rowsAffected[0];
-//     if (rowsAffected > 0) {
-//       return res
-//         .status(200)
-//         .json({ message: "Account deactivated successfully", rowsAffected });
-//     } else {
-//       return res.status(404).json({ error: "No user found to delete" });
-//     }
-//   } catch (error) {
-//     console.error(error);
-//     return res.status(202).json({ error: "request failed" });
-//   }
-// };
-
 export const toggleAccoountStatus = async (req:Request, res:Response)=>{
   try {
     let { username } = req.params;

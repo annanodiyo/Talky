@@ -13,6 +13,8 @@ import { EditprofileComponent } from './editprofile/editprofile.component';
 import { MessagesComponent } from './messages/messages.component';
 import { SearchComponent } from './search/search.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -28,11 +30,14 @@ import { ResetpasswordComponent } from './resetpassword/resetpassword.component'
     MessagesComponent,
     SearchComponent,
     ResetpasswordComponent,
-   
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -6,19 +6,8 @@ CREATE OR ALTER PROCEDURE createPost
 AS
 BEGIN
     SET NOCOUNT ON;
-    DECLARE @status BIT
 
-    select @status  = is_deleted
-    from users
-    where is_Deleted = 0
-
-    if @status = 0
-    BEGIN
     INSERT INTO post (user_id,post_id, post_text, image_url)
     VALUES (@user_id,@post_id, @post_text, @image_url);
-    END
-    ELSE
-    BEGIN
-    print 'activate account to proceed'
-    END
+    
 END
