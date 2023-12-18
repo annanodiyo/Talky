@@ -15,6 +15,7 @@ import { SearchComponent } from './search/search.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -30,7 +31,6 @@ import { HttpClientModule } from '@angular/common/http';
     MessagesComponent,
     SearchComponent,
     ResetpasswordComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -38,8 +38,9 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    ToastrModule.forRoot(),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

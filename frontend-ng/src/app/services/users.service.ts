@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -15,5 +16,11 @@ export class UsersService {
     });
     let data = await res.json();
     return data;
+  }
+
+  getUserByUsername(username: string): Observable<any> {
+    return this.http.get<getAllProductDetails[]>(
+      `http://localhost:3000/products/one/${id}`
+    );
   }
 }
